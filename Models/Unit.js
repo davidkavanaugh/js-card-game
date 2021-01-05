@@ -1,4 +1,6 @@
 const Card = require("./Card");
+const { InvalidTargetError } = require("../Errors");
+
 class Unit extends Card {
   constructor(name, cost, power, resilience) {
     super(name, cost);
@@ -6,7 +8,12 @@ class Unit extends Card {
     this.resilience = resilience;
   }
   attack(target) {
-    target.resilience -= this.power;
+    if (target instanceof Unit) {
+      target.resilience -= this.power;
+      return this;
+    } else {
+      throw new InvalidTargetError();
+    }
   }
 }
 
