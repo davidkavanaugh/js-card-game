@@ -1,4 +1,4 @@
-const { createUnit } = require("../UnitsController");
+const { getUnit, createUnit, updateUnit } = require("../UnitsController");
 
 describe("createUnit", () => {
   const payload = {
@@ -17,5 +17,12 @@ describe("createUnit", () => {
         "resilience": 4,
       }
     `);
+  });
+});
+
+describe("updateUnit", () => {
+  it("should return updated Unit object", async () => {
+    const result = await updateUnit(payload);
+    expect(result).toMatchInlineSnapshot();
   });
 });
