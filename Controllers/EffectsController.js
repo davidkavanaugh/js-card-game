@@ -10,6 +10,4 @@ const createEffect = async (payload) => {
   }
 };
 
-module.exports = {
-  createEffect,
-};
+module.exports = createEffect;
