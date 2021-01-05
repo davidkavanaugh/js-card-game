@@ -5,6 +5,9 @@ class Unit extends Card {
     this.power = power;
     this.resilience = resilience;
   }
+  attack(target) {
+    target.resilience -= this.power;
+  }
 }
 
 module.exports = Unit;

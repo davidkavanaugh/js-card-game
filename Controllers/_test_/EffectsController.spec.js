@@ -8,8 +8,8 @@ describe("createEffect", () => {
     stat: "resilience",
     magnitude: 3,
   };
-  it("should return Effect object", async () => {
-    const result = await createEffect(payload);
+  it("should return Effect object", () => {
+    const result = createEffect(payload);
     expect(result).toMatchInlineSnapshot(`
       Effect {
         "cost": 2,
