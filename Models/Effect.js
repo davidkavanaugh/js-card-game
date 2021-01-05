@@ -1,4 +1,7 @@
 const Card = require("./Card");
+const Unit = require("./Unit");
+const { InvalidTargetError } = require("../Errors");
+
 class Effect extends Card {
   constructor(name, cost, text, stat, magnitude) {
     super(name, cost);
@@ -8,7 +11,7 @@ class Effect extends Card {
     if (target instanceof Unit) {
       target.stat += this.magnitute;
     } else {
-      throw new Error("Target must be a unit!");
+      throw new InvalidTargetError();
     }
   }
 }
