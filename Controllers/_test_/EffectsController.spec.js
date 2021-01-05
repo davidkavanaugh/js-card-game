@@ -15,7 +15,7 @@ describe("createEffect", () => {
         "cost": 2,
         "magnitute": 3,
         "name": "Hard Algorithm",
-        "state": "resilience",
+        "stat": "resilience",
         "text": "increase target's resilience by 3",
       }
     `);
