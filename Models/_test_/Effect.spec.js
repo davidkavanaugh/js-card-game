@@ -15,7 +15,7 @@ describe("create", () => {
     expect(result).toMatchInlineSnapshot(`
       Effect {
         "cost": 2,
-        "magnitute": 3,
+        "magnitude": 3,
         "name": "Hard Algorithm",
         "stat": "resilience",
         "text": "increase target's resilience by 3",
