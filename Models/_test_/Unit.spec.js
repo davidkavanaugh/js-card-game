@@ -16,7 +16,7 @@ describe("attack", () => {
       unitObject.attack(target);
     }).toThrow(new InvalidTargetError());
   });
-  it("should return updated Effect object", () => {
+  it("should return unitObject", () => {
     const unitObject = new Unit("Red Belt Ninja", 3, 3, 4);
     const target = new Unit("Black Belt Ninja", 5, 4, 3);
 
