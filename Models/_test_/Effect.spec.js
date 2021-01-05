@@ -2,6 +2,28 @@ const Effect = require("../Effect");
 const Unit = require("../Unit");
 const { InvalidTargetError } = require("../../Errors");
 
+describe("create", () => {
+  const payload = {
+    name: "Hard Algorithm",
+    cost: 2,
+    text: "increase target's resilience by 3",
+    stat: "resilience",
+    magnitude: 3,
+  };
+  it("should return Effect object", () => {
+    const result = Effect.create(payload);
+    expect(result).toMatchInlineSnapshot(`
+      Effect {
+        "cost": 2,
+        "magnitute": 3,
+        "name": "Hard Algorithm",
+        "stat": "resilience",
+        "text": "increase target's resilience by 3",
+      }
+    `);
+  });
+});
+
 describe("play", () => {
   it("should throw InvalidTargetError if invalid target", () => {
     const effectObject = new Effect(

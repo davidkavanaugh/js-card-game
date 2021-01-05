@@ -31,3 +31,23 @@ describe("attack", () => {
     `);
   });
 });
+
+const payload = {
+  name: "Red Belt Ninja",
+  cost: 3,
+  power: 3,
+  resilience: 4,
+};
+describe("create", () => {
+  it("should return Unit object", () => {
+    const result = Unit.create(payload);
+    expect(result).toMatchInlineSnapshot(`
+      Unit {
+        "cost": 3,
+        "name": "Red Belt Ninja",
+        "power": 3,
+        "resilience": 4,
+      }
+    `);
+  });
+});
