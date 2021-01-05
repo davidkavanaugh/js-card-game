@@ -1,4 +1,4 @@
-import * as UnitsController from "../UnitsController";
+const { createUnit } = require("../UnitsController");
 
 describe("createUnit", () => {
   const payload = {
@@ -7,14 +7,15 @@ describe("createUnit", () => {
     power: 3,
     resilience: 4,
   };
-  const { name, cost, power, resilience } = payload;
   it("should return Unit object", async () => {
-    const result = await UnitsController.createUnit(
-      name,
-      cost,
-      power,
-      resilience
-    );
-    expect(result).toMatchInlineSnapshot();
+    const result = await createUnit(payload);
+    expect(result).toMatchInlineSnapshot(`
+      Unit {
+        "cost": 3,
+        "name": "Red Belt Ninja",
+        "power": 3,
+        "resilience": 4,
+      }
+    `);
   });
 });
