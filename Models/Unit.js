@@ -1,8 +1,7 @@
 const Card = require("./Card");
 class Unit extends Card {
   constructor(name, cost, power, resilience) {
-    super(name);
-    this.cost = cost;
+    super(name, cost);
     this.power = power;
     this.resilience = resilience;
   }
